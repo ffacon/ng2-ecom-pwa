@@ -1,0 +1,9 @@
+[
+    { "id": 0, "author": "Yassine", "category": "True Fact", "content": "Angular is awesome!!!!", "likes": 8 },
+    { "id": 1, "author": "Nourredine", "category": "Security", "content": "La formation 'RENFORCER LA SECURITE DES APPLICATIONS ANGULAR' est disponible", "likes": 10 },
+    { "id": 2, "author": "Nourredine", "category": "True fact", "content": "Angular training is awesome!!!!", "likes": 1200 },
+    { "id": 3, "author": "Bruno", "category": "Hater", "content": "Unit Tests are useless", "likes": -1},
+    { "id": 4, "author": "Yassine", "category": "True fact", "content": "PWA with Angular is easy", "likes": 200},
+    { "id": 5, "author": "François", "category": "JHipster", "content": "JHipster - Generate your Spring Boot + Angular Application at https://www.jhipster.tech/", "likes": 7},
+    { "id": 6, "author": "François", "category": "OpenShift", "content": "OpenShift is becoming the default Choice for Enterprise Kubernetes.", "likes": 77}
+]
