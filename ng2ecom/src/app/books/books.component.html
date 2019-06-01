@@ -67,7 +67,7 @@
      
   </div>
   <kpagination [startPage]="currentPage" 
-               [totalNbItems]="books.length" 
+               [totalNbItems]="dataContainer?.filteredBooks?.length" 
                [nbItemsPerPage]="booksPerPageFilter" 
                (pageChange)="switchPage($event)" ></kpagination>
 

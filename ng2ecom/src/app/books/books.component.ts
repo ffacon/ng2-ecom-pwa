@@ -5,6 +5,7 @@ import { KPagination } from '../components/kpagination/kpagination';
 import { FilterFieldPipe } from '../pipes/filter-field.pipe';
 import { UpdateDataPipe } from '../pipes/update-data.pipe';
 import { OrderByPipe } from '../pipes/order-by.pipe';
+import { DataContainerService } from '../services/data-container.service';
 
 
 @Component({
@@ -13,21 +14,21 @@ import { OrderByPipe } from '../pipes/order-by.pipe';
   styleUrls: ['./books.component.css']
 })
 export class BooksComponent implements OnInit {
-  booksPerPageFilter: number = 4;
-  currentPage: number = 1;
+  booksPerPageFilter = 4;
+  currentPage = 1;
   books: Book[];
 
-  bookNameFilter: string = '';
-  bookOrderBy: string = 'name';
-  reverseOrderFilter: boolean = false;
+  bookNameFilter = '';
+  bookOrderBy = 'name';
+  reverseOrderFilter = false;
 
 
-  constructor(public booksService: BooksService) { }
+  constructor(public booksService: BooksService, public dataContainer: DataContainerService) { }
 
   ngOnInit() {
     this.booksService.getBooks().subscribe((books: Book[]) => {
         this.books = books;
-      })
+      });
   }
 
   switchPage(page: number) {
