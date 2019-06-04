@@ -20,6 +20,8 @@ import { routing } from './app.routing';
 import { HttpClientModule } from '@angular/common/http';
 import { KPagination } from './components/kpagination/kpagination';
 import { BuyZoneComponent } from './buy-zone/buy-zone.component';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,7 @@ import { BuyZoneComponent } from './buy-zone/buy-zone.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule, 
-    routing
+    routing, ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
 
   ],
   providers: [],
