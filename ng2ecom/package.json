@@ -4,6 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve --proxy-config proxy.conf.json",
+    "start:prod": "ng build --prod && cd dist/ng2ecom && http-server -c-1 -P http://localhost:8080 .",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
