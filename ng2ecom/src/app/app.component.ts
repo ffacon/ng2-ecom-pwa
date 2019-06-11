@@ -1,11 +1,6 @@
-import { Component } from '@angular/core';
-
-
-import {BooksService} from './services/books.service';
-import {ContactService} from './services/contact.service';
+import { Component, OnInit } from '@angular/core';
 import {UserService} from './services/user.service';
-
-import { Router }   from '@angular/router';
+import { SwUpdate } from '@angular/service-worker';
 
 @Component({
   selector: 'app-root',
@@ -13,8 +8,19 @@ import { Router }   from '@angular/router';
   styleUrls: ['./app.component.css'],
   providers: [UserService ]
 })
-export class AppComponent {
-  constructor(private router: Router, public userService: UserService) {}
+export class AppComponent implements OnInit {
+  constructor(public userService: UserService,
+              public swUpdate: SwUpdate) {}
+
+  ngOnInit() {
+    if (this.swUpdate.isEnabled) {
+      this.swUpdate.available.subscribe(() => {
+          if (confirm(`New version available. Load New Version?`)) {
+             window.location.reload();
+            }
+       });
+      }
+    }
 
   logout () {
     this.userService.logout();
