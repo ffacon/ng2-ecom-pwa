@@ -23,7 +23,7 @@
     "gulp-save": "1.2.1",
     "gulp-protractor": "2.4.0",
     "underscore": "1.7.0",
-    "express": "4.13.3",
+    "express": "4.19.2",
     "glob": "5.0.15",
     "body-parser": "1.15.1",
     "typescript": "next",
